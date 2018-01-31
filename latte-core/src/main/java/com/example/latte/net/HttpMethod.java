@@ -13,5 +13,5 @@ public enum HttpMethod {
     PUT,
     PUT_RAM,
     DELETE,
-    UPLOADE
+    UPLOAD
 }

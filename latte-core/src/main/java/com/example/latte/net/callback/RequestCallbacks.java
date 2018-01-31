@@ -1,6 +1,5 @@
 package com.example.latte.net.callback;
 
-import android.content.Context;
 import android.os.Handler;
 
 import com.example.latte.ui.LatteLoader;

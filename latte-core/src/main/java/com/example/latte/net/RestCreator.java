@@ -28,7 +28,7 @@ public class RestCreator {
         return PARAMSHolder.PARAMS;
     }
 
-    public static RestService getRestServer() {
+    public static RestService getRestService() {
         return RestServiceHolder.REST_SERVICE;
     }
 
@@ -37,7 +37,7 @@ public class RestCreator {
         private static final Retrofit RETROFIT_CLIENT = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(OKHTTPHolder.OK_HTTP_CLIENT)
-                .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(ScalarsConverterFactory.create()) //设置数据解析器
                 .build();
     }
     private static final class OKHTTPHolder{
