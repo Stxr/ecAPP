@@ -1,4 +1,4 @@
-package com.example.latte.ui;
+package com.example.latte.ui.loader;
 
 /**
  * Created by stxr .

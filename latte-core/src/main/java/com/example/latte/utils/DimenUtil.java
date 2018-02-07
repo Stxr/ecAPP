@@ -5,8 +5,6 @@ import android.util.DisplayMetrics;
 
 import com.example.latte.app.Latte;
 
-import java.util.concurrent.ThreadPoolExecutor;
-
 /**
  * Created by stxr .
  * Date: 18-1-30
@@ -19,7 +17,7 @@ public class DimenUtil {
      * @return 返回屏幕的宽
      */
     public static int getScreenWidth() {
-        final Resources resources = Latte.getApplication().getResources();
+        final Resources resources = Latte.getApplicationContext().getResources();
         final DisplayMetrics dm = resources.getDisplayMetrics();
         return dm.widthPixels;
     }
@@ -29,7 +27,7 @@ public class DimenUtil {
      * @return 返回屏幕的高
      */
     public static int getScreenHeight() {
-        final Resources resources = Latte.getApplication().getResources();
+        final Resources resources = Latte.getApplicationContext().getResources();
         final DisplayMetrics dm = resources.getDisplayMetrics();
         return dm.heightPixels;
     }

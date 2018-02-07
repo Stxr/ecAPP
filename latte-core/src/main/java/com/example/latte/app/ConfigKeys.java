@@ -6,9 +6,11 @@ package com.example.latte.app;
  * Time: 上午9:59
  * note: 枚举类在整个应用程序里是唯一的单例，可以用来进行惰性单利的初始化
  */
-public enum ConfigType {
+public enum ConfigKeys {
     API_HOST,   //网络请求域名
     APPLICATION_CONTEXT,  //全局上下文
     CONFIG_READY,  //初始化
-    ICON
+    ICON,
+    LOADER_DELAY,
+    INTERCEPTOR
 }
