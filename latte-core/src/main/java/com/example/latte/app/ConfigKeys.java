@@ -11,6 +11,7 @@ public enum ConfigKeys {
     APPLICATION_CONTEXT,  //全局上下文
     CONFIG_READY,  //初始化
     ICON,
+    HANDLER,
     LOADER_DELAY,
     INTERCEPTOR
 }

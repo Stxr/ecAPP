@@ -24,7 +24,7 @@ public class ExampleApp extends Application {
         Latte.init(this)
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FontEcModule())
-                .withApiHost("http://127.0.0.1/")
+                .withApiHost("http://192.168.1.116:8080/RestServer/api/")
                 .withInterceptor(new DebugInterceptor("test", R.raw.test))
                 .configure();
 

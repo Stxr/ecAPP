@@ -1,13 +1,13 @@
 package com.example.latte.app;
 
 import android.animation.ObjectAnimator;
+import android.os.Handler;
 
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import okhttp3.Interceptor;
 
 /**
@@ -23,6 +23,8 @@ public class Configurator {
     private static final ArrayList<IconFontDescriptor> ICONS = new ArrayList<>();
     //拦截器
     private static final ArrayList<Interceptor> INTERCEPTORS = new ArrayList<>();
+
+    private static final Handler HANDLER = new Handler();
 
     private Configurator() {
         LATTE_CONFIGS.put(ConfigKeys.CONFIG_READY.name(), false);
@@ -46,6 +48,7 @@ public class Configurator {
 
     public final void configure() {
         initIcons();
+        LATTE_CONFIGS.put(ConfigKeys.HANDLER, HANDLER);
         LATTE_CONFIGS.put(ConfigKeys.CONFIG_READY, true);
     }
 
@@ -62,7 +65,7 @@ public class Configurator {
     }
 
     @SuppressWarnings("unchecked")
-    public final <T> T getConfiguration(Enum<ConfigKeys> key) {
+    public final <T> T getConfiguration(Object key) {
         checkConfiguration();
         final Object value = LATTE_CONFIGS.get(key);
         if (value ==  null) {

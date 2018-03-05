@@ -60,4 +60,6 @@ dependencies {
     api 'com.orhanobut:logger:2.1.1'
     //数据库GreenDao
     api 'org.greenrobot:greendao:3.2.2' // add library
+    //RecycleView 库
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:+'
 }

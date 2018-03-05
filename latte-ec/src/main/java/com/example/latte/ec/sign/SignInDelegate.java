@@ -7,10 +7,12 @@ import android.support.design.widget.TextInputEditText;
 import android.util.Patterns;
 import android.view.View;
 
+import com.example.latte.app.AccountManager;
 import com.example.latte.delegates.LatteDelegate;
 import com.example.latte.ec.R;
 import com.example.latte.ec.R2;
 import com.example.latte.net.RestClient;
+import com.example.latte.net.callback.IFailure;
 import com.example.latte.net.callback.ISuccess;
 import com.example.latte.utils.log.LatteLogger;
 import com.example.latte.utils.storage.LattePreference;
@@ -55,6 +57,13 @@ public class SignInDelegate extends LatteDelegate {
                             SignHandler.onSignIn(response,mISignerListener);
                         }
                     })
+                    .failure(new IFailure() {
+                        @Override
+                        public void onFailure() {
+                            mISignerListener.onSignInSuccess();
+                            AccountManager.setSignState(true);
+                        }
+                    })
                     .build()
                     .post();
 
@@ -68,6 +77,7 @@ public class SignInDelegate extends LatteDelegate {
 
     @OnClick(R2.id.tv_link_sign_up)
     void onClickLink() {
+        start(new SignUpDelegate());
     }
     @Override
     public Object setLayout() {

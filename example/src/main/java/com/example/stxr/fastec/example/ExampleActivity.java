@@ -11,6 +11,7 @@ import com.example.latte.app.Latte;
 import com.example.latte.delegates.LatteDelegate;
 import com.example.latte.ec.launcher.LauncherDelegate;
 import com.example.latte.ec.launcher.LauncherScrollDelegate;
+import com.example.latte.ec.main.ECBottomDelegate;
 import com.example.latte.ec.sign.ISignerListener;
 import com.example.latte.ec.sign.SignInDelegate;
 import com.example.latte.ec.sign.SignUpDelegate;
@@ -36,6 +37,7 @@ public class ExampleActivity extends ProxyActivity implements
 
     @Override
     public void onSignInSuccess() {
+        startWithPop(new ECBottomDelegate());
         Toast.makeText(this, "回调监听:登陆成功", Toast.LENGTH_SHORT).show();
     }
 
@@ -48,7 +50,7 @@ public class ExampleActivity extends ProxyActivity implements
     public void onLauncherFinish(OnLauncherFinishTag tag) {
         switch (tag) {
             case SIGNED:
-                startWithPop(new ExampleDelegate());
+                startWithPop(new ECBottomDelegate());
                 break;
             case NOT_SIGNED:
                 startWithPop(new SignInDelegate());
